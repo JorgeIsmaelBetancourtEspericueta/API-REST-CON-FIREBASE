@@ -1,12 +1,12 @@
-const express = require("express");
-const router = express.Router();
+const express = require("express"); //Se importa el modúlo Express
+const router = express.Router(); //Crea un enrutador de Express, el cual permite definir rutas
 const {
   getTasks,
   addTask,
   deleteTask,
   updateTask,
   getTaskById,
-} = require("../models/task"); // Asegúrate de incluir getTaskById
+} = require("../models/task"); // Es necesario incluir getTaskById
 
 // Obtener todas las tareas
 router.get("/", async (req, res) => {

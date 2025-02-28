@@ -1,7 +1,8 @@
 const { db } = require("../firebaseConfig"); // Importa la configuración de Firestore
-const { tasks } = require("../models/task"); // Mantén tu lógica existente
+const { tasks } = require("../models/task"); // Mantiene la lógica existente
 
 exports.getAllTasks = (req, res) => {
+  // Se marco el codigo de estado de éxito.
   res.status(200).json(tasks);
 };
 
@@ -9,8 +10,10 @@ exports.getTaskById = (req, res) => {
   const id = req.params.id; // Cambiar a string ya que Firestore usa strings para IDs
   const task = tasks.find((item) => item.id === id);
   if (task) {
+    // Se establece el codigo de estado 200, que indica que la solicitud ha tenido éxito.
     res.status(200).json(task);
   } else {
+    // Se indica el codigo de estado 404, el servidor no pudo encontrar la página o archivo solicitado
     res.status(404).json({ message: "Tarea no encontrada" });
   }
 };
@@ -21,6 +24,7 @@ exports.createTask = (req, res) => {
     title: req.body.title,
   };
   tasks.push(newTask);
+  // Se realiza el codigo de estado 201, el cual significa que una solicitud HTTP se cumplió y creó un nuevo recurso
   res.status(201).json(newTask);
 };
 
@@ -29,8 +33,10 @@ exports.updateTask = (req, res) => {
   const task = tasks.find((t) => t.id === id);
   if (task) {
     task.title = req.body.title;
+    // Se establece el codigo de estado 200, que indica que la solicitud ha tenido éxito.
     res.status(200).json(task);
   } else {
+    // Se indica el codigo de estado 404, el servidor no pudo encontrar la página o archivo solicitado
     res.status(404).json({ message: "Tarea no encontrada" });
   }
 };

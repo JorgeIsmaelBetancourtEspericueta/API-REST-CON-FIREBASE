@@ -2,6 +2,7 @@
 
 **Equipo:**  
 Betancourt Espericueta Jorge Ismael - 21400655  
+Cuevas Cruz Luis Angel Yael         - 214006664  
 
 ## Contenido
 

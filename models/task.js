@@ -1,6 +1,6 @@
 const { db } = require("../firebaseConfig.js");
 
-const tasksCollection = db.collection("tasks");
+const tasksCollection = db.collection("tasks"); //Se asigna el objeto de la colección tasks
 
 // Obtener todas las tareas
 async function getTasks() {
